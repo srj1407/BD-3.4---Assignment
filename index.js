@@ -57,6 +57,7 @@ function deleteProduct(productId, cart) {
 app.get('/cart/delete', (req, res) => {
   let productId = parseInt(req.query.productId);
   let result = deleteProduct(productId, cart);
+  cart=result
   return res.json({ cartItems: result });
 });
 
